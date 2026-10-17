@@ -1,0 +1,29 @@
+<style>
+    body {
+        background-color: pink;
+    }
+</style>
+<img src="{{ url_for('cupcake_image')}}"
+    alt="Babeczka"
+    width="180">
+
+<h1>Bakery</h1>
+<p>Choose your cake and calculate the cost.</p>
+
+<ul>
+    <li>Cheesecake - 25 PLN</li>
+    <li>Sponge cake - 15 PLN</li>
+</ul>
+<form method="get" action="/">
+    <select name="cake">
+    <option value="cheesecake">Cheesecake</option>
+    <option value="sponge cake">Sponge Cake</option>
+</select>
+    <input type="text" name="number">
+    <button type="submit">Calculate cost</button>
+</form>
+{% if total is not none %}
+    <p>Total: {{total}} PLN</p>
+{%endif %}
+
+<p>{{ error }}</p>
